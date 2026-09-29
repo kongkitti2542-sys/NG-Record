@@ -28,6 +28,7 @@ Keep this PowerShell window open while using the add-in. Confirm that `https://l
 4. Launch NG Record from the Add-ins menu.
 
 The exact Add-ins menu location can vary by Excel build and organization policy. If upload is disabled, ask the Microsoft 365 administrator whether sideloading Office Add-ins is permitted.
+For the current Excel menu flow, see Microsoft's [Sideload Office Add-ins for testing](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/sideload-office-add-ins-for-testing) guide.
 
 ## Use and remove
 
@@ -36,3 +37,9 @@ Save creates the `NG_Record` worksheet and `NGRecords` table in the current work
 Close Excel or remove NG Record from the Office Add-ins management view to stop using it. Stop the local host with Ctrl+C. To discard local development credentials, remove `localhost.pfx` and delete the corresponding NG Record certificate from the current user's Personal and Trusted Root Certification Authorities stores.
 
 This is a local development sideload. It is not deployed for other computers; other users would need an HTTPS-hosted version and an approved organization deployment method.
+
+## Verify the direct workbook flow
+
+In the task pane, save a sample Part No., Job No., Cause, NG Qty, and Record Date. Confirm the row appears in the `NGRecords` table on `NG_Record`, save and reopen the workbook, then filter History to that date and export the filtered XLSX. The ordinary web page remains a separate browser-local mode.
+
+The automated browser checks use a mock Excel host. They verify the task pane's workbook-data path, but they do not replace sideloading and checking the add-in in an actual Excel Desktop installation.
