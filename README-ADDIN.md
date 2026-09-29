@@ -5,6 +5,7 @@ This add-in writes NG entries into the workbook currently open in **Excel Deskto
 ## Prerequisites
 
 - Excel Desktop for Windows with Office Add-ins enabled by the organization.
+- Excel JavaScript API requirement set 1.4 or newer.
 - Node.js 20 or newer.
 - A network connection to load Microsoft's Office.js library.
 
